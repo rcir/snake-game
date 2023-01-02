@@ -6,3 +6,11 @@
     grid-template-columns: repeat(25, 1fr);
     grid-template-rows: repeat(25, 1fr);
 }
+.snake{
+    border: 1px solid #000;
+    background-color: #0f0;
+}
+.food{
+    border: 1px solid #000;
+    background-color: #f00;
+}
