@@ -18,3 +18,6 @@ function placeDiv(div, x, y){
     div.style.gridColumnStart = x;
     div.style.gridRowStart = y;
 }
+function removeDiv(className, index){
+    document.querySelectorAll(className)[index].remove();
+}
