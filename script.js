@@ -1,4 +1,6 @@
 const container = document.querySelector("#game-container");
+let x = 1;
+let y = 1;
 
 function addDiv(className, x, y){
     let newDiv = generateDiv(className);
