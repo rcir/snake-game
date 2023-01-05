@@ -1,5 +1,9 @@
 const container = document.querySelector("#game-container");
 
+function addDiv(className, x, y){
+    let newDiv = generateDiv(className);
+    placeDiv(newDiv, x, y);
+}
 function generateDiv(className){
     let div = document.createElement("div");
     div.classList.add(className);
