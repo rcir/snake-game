@@ -19,5 +19,5 @@ function placeDiv(div, x, y){
     div.style.gridRowStart = y;
 }
 function removeDiv(className, index){
-    document.querySelectorAll(className)[index].remove();
+    document.querySelectorAll(`.${className}`)[index].remove();
 }
