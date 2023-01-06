@@ -4,6 +4,10 @@ let y = 1;
 let xVelocity = 1;
 let yVelocity = 0;
 
+function move(){
+    addDiv("snake", x += xVelocity, y += yVelocity);
+    removeDiv("snake", 0);
+}
 function addDiv(className, x, y){
     let newDiv = generateDiv(className);
     placeDiv(newDiv, x, y);
