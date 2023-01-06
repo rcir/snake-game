@@ -4,6 +4,12 @@ let y = 1;
 let xVelocity = 1;
 let yVelocity = 0;
 
+function nextTick(){
+    setTimeout(() => {
+        move();
+        nextTick();
+    }, 100);
+}
 function move(){
     addDiv("snake", x += xVelocity, y += yVelocity);
     removeDiv("snake", 0);
