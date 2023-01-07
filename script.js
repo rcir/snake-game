@@ -40,3 +40,7 @@ function placeDiv(div, x, y){
 function removeDiv(className, index){
     document.querySelectorAll(`.${className}`)[index].remove();
 }
+function generateNewFoodCoordinates(){
+    fx = Math.floor(Math.random()*25+1);
+    fy = Math.floor(Math.random()*25+1);
+}
