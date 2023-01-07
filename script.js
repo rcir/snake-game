@@ -3,6 +3,7 @@ let x = 1;
 let y = 1;
 let xVelocity = 1;
 let yVelocity = 0;
+let gameSpeed = 100;
 
 window.addEventListener("load", start);
 
@@ -14,7 +15,7 @@ function nextTick(){
     setTimeout(() => {
         move();
         nextTick();
-    }, 100);
+    }, gameSpeed);
 }
 function move(){
     addDiv("snake", x += xVelocity, y += yVelocity);
