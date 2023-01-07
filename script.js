@@ -3,6 +3,8 @@ let x = 1;
 let y = 1;
 let xVelocity = 1;
 let yVelocity = 0;
+let fx;
+let fy;
 let gameSpeed = 100;
 
 window.addEventListener("load", start);
