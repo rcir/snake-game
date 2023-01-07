@@ -4,6 +4,8 @@ let y = 1;
 let xVelocity = 1;
 let yVelocity = 0;
 
+window.addEventListener("load", start);
+
 function start(){
     addDiv("snake", x, y);
     nextTick();
