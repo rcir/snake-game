@@ -23,6 +23,9 @@ function move(){
     addDiv("snake", x += xVelocity, y += yVelocity);
     removeDiv("snake", 0);
 }
+function ateFood(){
+    return x == fx && y == fy;
+}
 function addDiv(className, x, y){
     let newDiv = generateDiv(className);
     placeDiv(newDiv, x, y);
