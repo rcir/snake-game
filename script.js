@@ -11,6 +11,8 @@ window.addEventListener("load", start);
 
 function start(){
     addDiv("snake", x, y);
+    generateNewFoodCoordinates();
+    addDiv("food", fx, fy);
     nextTick();
 }
 function nextTick(){
