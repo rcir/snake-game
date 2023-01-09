@@ -8,6 +8,7 @@ let fy;
 let gameSpeed = 100;
 
 window.addEventListener("load", start);
+window.addEventListener("keydown", changeDirection);
 
 function start(){
     addDiv("snake", x, y);
