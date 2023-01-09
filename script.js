@@ -54,6 +54,11 @@ function changeDirection(event){
 function ateFood(){
     return x == fx && y == fy;
 }
+function replaceFood(){
+    removeDiv("food", 0);
+    generateNewFoodCoordinates();
+    addDiv("food", fx, fy);
+}
 function addDiv(className, x, y){
     let newDiv = generateDiv(className);
     placeDiv(newDiv, x, y);
