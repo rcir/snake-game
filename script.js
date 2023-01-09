@@ -27,20 +27,25 @@ function move(){
     removeDiv("snake", 0);
 }
 function changeDirection(event){
+    const key = event.keyCode;
+    const left = 37;
+    const up = 38;
+    const right = 39;
+    const down = 40;
     switch(true){
-        case event.keyCode == 37:
+        case key == left:
             xVelocity = -1;
             yVelocity = 0;
             break;
-        case event.keyCode == 38:
+        case key == up:
             xVelocity = 0;
             yVelocity = -1;
             break;
-        case event.keyCode == 39:
+        case key == right:
             xVelocity = 1;
             yVelocity = 0;
             break;
-        case event.keyCode == 40:
+        case key == down:
             xVelocity = 0;
             yVelocity = 1;
             break;
