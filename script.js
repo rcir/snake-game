@@ -24,7 +24,7 @@ function nextTick(){
 }
 function move(){
     addDiv("snake", x += xVelocity, y += yVelocity);
-    removeDiv("snake", 0);
+    ateFood() ? replaceFood() : removeDiv("snake", 0);
 }
 function changeDirection(event){
     const key = event.keyCode;
