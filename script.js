@@ -26,6 +26,26 @@ function move(){
     addDiv("snake", x += xVelocity, y += yVelocity);
     removeDiv("snake", 0);
 }
+function changeDirection(event){
+    switch(true){
+        case event.keyCode == 37:
+            xVelocity = -1;
+            yVelocity = 0;
+            break;
+        case event.keyCode == 38:
+            xVelocity = 0;
+            yVelocity = -1;
+            break;
+        case event.keyCode == 39:
+            xVelocity = 1;
+            yVelocity = 0;
+            break;
+        case event.keyCode == 40:
+            xVelocity = 0;
+            yVelocity = 1;
+            break;
+    }
+}
 function ateFood(){
     return x == fx && y == fy;
 }
