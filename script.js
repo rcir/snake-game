@@ -6,6 +6,7 @@ let yVelocity = 0;
 let fx;
 let fy;
 let gameSpeed = 100;
+let snake;
 
 window.addEventListener("load", start);
 window.addEventListener("keydown", changeDirection);
@@ -78,7 +79,7 @@ function removeDiv(className, index){
 }
 function generateNewFoodCoordinates(){
     let coordinatesAlreadyOccupied;
-    let snake = document.querySelectorAll(".snake");
+    snake = document.querySelectorAll(".snake");
     do{
         coordinatesAlreadyOccupied = false;
         fx = Math.floor(Math.random()*25+1);
