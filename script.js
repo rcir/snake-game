@@ -77,6 +77,18 @@ function removeDiv(className, index){
     document.querySelectorAll(`.${className}`)[index].remove();
 }
 function generateNewFoodCoordinates(){
-    fx = Math.floor(Math.random()*25+1);
-    fy = Math.floor(Math.random()*25+1);
+    let coordinatesAlreadyOccupied;
+    let snake = document.querySelectorAll(".snake");
+    do{
+        coordinatesAlreadyOccupied = false;
+        fx = Math.floor(Math.random()*25+1);
+        fy = Math.floor(Math.random()*25+1);
+        for(let i=0;i<snake.length;i++){
+            if(snake[i].style.gridColumnStart == fx 
+            && snake[i].style.gridRowStart == fy){
+                    coordinatesAlreadyOccupied = true;
+                    break;
+                }
+        }
+    }while(coordinatesAlreadyOccupied);
 }
