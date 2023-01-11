@@ -75,7 +75,10 @@ function placeDiv(div, x, y){
     div.style.gridRowStart = y;
 }
 function removeDiv(className, index){
-    document.querySelectorAll(`.${className}`)[index].remove();
+    snake = document.querySelectorAll(".snake");
+    if(className == "food" || snake.length > 3){
+        document.querySelectorAll(`.${className}`)[index].remove();
+    }
 }
 function generateNewFoodCoordinates(){
     let coordinatesAlreadyOccupied;
