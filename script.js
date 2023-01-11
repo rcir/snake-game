@@ -33,20 +33,27 @@ function changeDirection(event){
     const up = 38;
     const right = 39;
     const down = 40;
+    snake = document.querySelectorAll(".snake");
+    const secondPartX = snake[snake.length-2].style.gridColumnStart;
+    const secondPartY = snake[snake.length-2].style.gridRowStart;
+    const goingRight = x - secondPartX == 1;
+    const goingDown = y - secondPartY == 1;
+    const goingLeft = x - secondPartX == -1;
+    const goingUp = y - secondPartY == -1;
     switch(true){
-        case key == left:
+        case key == left && !goingRight:
             xVelocity = -1;
             yVelocity = 0;
             break;
-        case key == up:
+        case key == up && !goingDown:
             xVelocity = 0;
             yVelocity = -1;
             break;
-        case key == right:
+        case key == right && !goingLeft:
             xVelocity = 1;
             yVelocity = 0;
             break;
-        case key == down:
+        case key == down && !goingUp:
             xVelocity = 0;
             yVelocity = 1;
             break;
