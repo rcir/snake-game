@@ -76,7 +76,7 @@ function placeDiv(div, x, y){
 }
 function removeDiv(className, index){
     snake = document.querySelectorAll(".snake");
-    if(className == "food" || snake.length > 3){
+    if(className != "snake" || snake.length > 3){
         document.querySelectorAll(`.${className}`)[index].remove();
     }
 }
