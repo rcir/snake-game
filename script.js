@@ -26,8 +26,16 @@ function nextTick(){
     }, gameSpeed);
 }
 function move(){
-    addDiv("snake", x += xVelocity, y += yVelocity);
+    x = controlCoordinates(x+xVelocity);
+    y = controlCoordinates(y+yVelocity);
+    addDiv("snake", x, y);
     ateFood() ? replaceFood() : removeDiv("snake", 0);
+}
+function controlCoordinates(coordinate){
+    if(coordinate < gridStart || coordinate > gridEnd){
+        return coordinate < gridStart ? gridEnd : gridStart;
+    }
+    return coordinate;
 }
 function changeDirection(event){
     const key = event.keyCode;
