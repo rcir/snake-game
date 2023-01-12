@@ -1,4 +1,6 @@
 const container = document.querySelector("#game-container");
+let gridStart = 1;
+let gridEnd = 25;
 let x = 1;
 let y = 1;
 let xVelocity = 1;
