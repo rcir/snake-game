@@ -22,6 +22,7 @@ function start(){
 function nextTick(){
     setTimeout(() => {
         move();
+        removeLostParts();
         nextTick();
     }, gameSpeed);
 }
@@ -76,6 +77,18 @@ function replaceFood(){
     removeDiv("food", 0);
     generateNewFoodCoordinates();
     addDiv("food", fx, fy);
+}
+function removeLostParts(){
+    snake = document.querySelectorAll(".snake");
+    let head = snake[snake.length-1];
+    for(let i=snake.length-5;i>=0;i--){
+        if(snake[i].style.gridColumnStart == head.style.gridColumnStart
+        && snake[i].style.gridRowStart == head.style.gridRowStart){
+            for(let j=i;j>=0;j--){
+                snake[j].remove();
+            }
+        }
+    }
 }
 function addDiv(className, x, y){
     let newDiv = generateDiv(className);
