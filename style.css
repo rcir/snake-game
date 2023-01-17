@@ -1,16 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    margin-top: 10vmin;
+}
 #game-container{
-    width: 500px;
-    height: 500px;
+    width: 80vmin;
+    height: 80vmin;
     background-color: #000;
     display: grid;
     grid-template-columns: repeat(25, 1fr);
     grid-template-rows: repeat(25, 1fr);
 }
 .snake{
-    border: 1px solid #000;
+    border: 0.2vmin solid #000;
     background-color: #0f0;
 }
 .food{
-    border: 1px solid #000;
+    border: 0.2vmin solid #000;
     background-color: #f00;
 }
