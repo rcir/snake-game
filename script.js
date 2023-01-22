@@ -129,5 +129,9 @@ function generateNewFoodCoordinates(){
     }while(coordinatesAlreadyOccupied);
 }
 function updateScore(){
-    score.textContent = document.querySelectorAll(".snake").length;
+    snake = document.querySelectorAll(".snake");
+    score.textContent = formatScore(snake.length);
+}
+function formatScore(score){
+    return score > 9 ? score : `0${score}`;
 }
