@@ -1,4 +1,5 @@
 const container = document.querySelector("#game-container");
+const score = document.querySelector("#score-text");
 let gridStart = 1;
 let gridEnd = 25;
 let x = 1;
@@ -23,6 +24,7 @@ function nextTick(){
     setTimeout(() => {
         move();
         removeLostParts();
+        updateScore();
         nextTick();
     }, gameSpeed);
 }
@@ -125,4 +127,7 @@ function generateNewFoodCoordinates(){
                 }
         }
     }while(coordinatesAlreadyOccupied);
+}
+function updateScore(){
+    score.textContent = document.querySelectorAll(".snake").length;
 }
