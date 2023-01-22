@@ -13,6 +13,12 @@ body{
     grid-template-columns: repeat(25, 1fr);
     grid-template-rows: repeat(25, 1fr);
 }
+#score-text{
+    font-size: 25vmin;
+    font-family: Consolas, 'Courier New', Courier, monospace;
+    color: #0f01;
+    position: absolute;
+}
 .snake{
     border: 0.2vmin solid #000;
     background-color: #0f0;
