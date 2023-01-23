@@ -33,12 +33,21 @@ function move(){
     y = controlCoordinates(y+yVelocity);
     addDiv("snake", x, y);
     ateFood() ? replaceFood() : removeDiv("snake", 0);
-}
-function controlCoordinates(coordinate){
-    if(coordinate < gridStart || coordinate > gridEnd){
-        return coordinate < gridStart ? gridEnd : gridStart;
+
+    function controlCoordinates(coordinate){
+        if(coordinate < gridStart || coordinate > gridEnd){
+            return coordinate < gridStart ? gridEnd : gridStart;
+        }
+        return coordinate;
     }
-    return coordinate;
+    function ateFood(){
+        return x == fx && y == fy;
+    }
+    function replaceFood(){
+        removeDiv("food", 0);
+        generateNewFoodCoordinates();
+        addDiv("food", fx, fy);
+    }
 }
 function changeDirection(event){
     const key = event.keyCode;
@@ -71,14 +80,6 @@ function changeDirection(event){
             yVelocity = 1;
             break;
     }
-}
-function ateFood(){
-    return x == fx && y == fy;
-}
-function replaceFood(){
-    removeDiv("food", 0);
-    generateNewFoodCoordinates();
-    addDiv("food", fx, fy);
 }
 function removeLostParts(){
     snake = document.querySelectorAll(".snake");
@@ -131,7 +132,8 @@ function generateNewFoodCoordinates(){
 function updateScore(){
     snake = document.querySelectorAll(".snake");
     score.textContent = formatScore(snake.length);
-}
-function formatScore(score){
-    return score > 9 ? score : `0${score}`;
+
+    function formatScore(score){
+        return score > 9 ? score : `0${score}`;
+    }
 }
